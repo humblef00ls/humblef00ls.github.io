@@ -6,7 +6,7 @@ body ,html {
 	color :white;
 	font-family: abel;
 	overflow: hidden;
-
+	font-weight: 100;
 }
 ::selection {
     
@@ -339,6 +339,9 @@ height: 48px;
 font-size: 11px;
 
 }
+	.helno{
+		font-weight: 200;
+	}
 }
 .a{
 
@@ -443,6 +446,12 @@ top: 20px;
 height: 50%;
 
 }
+	.aboot{
+		font-weight: 200;
+	}
+	.abuut{
+		font-weight: 200;
+	}
 .jake{
 	width: 90%;
 	height: 40%;
@@ -547,4 +556,17 @@ background: linear-gradient(to right, #12FFF7, #B3FFAB);
 	to{
 			opacity: 1;transform: translate3d(0px, 0px, 0px);
 	}
+}
+.aboot{
+
+	letter-spacing: 2px;
+		 font-size: 23px;
+
+
+}
+.abuut{
+
+	letter-spacing: 1px;
+	 font-size: 19px;
+
 }

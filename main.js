@@ -312,7 +312,7 @@ var c = canvas.getContext("2d");
 
 var numStars = 1000;
 var radius = 1;
-var focalLength = 100;
+var focalLength = 200;
 
 var centerX, centerY;
 
@@ -417,13 +417,13 @@ function speeder () {
       cunter++;           
         focalLength-=1;   
         console.log(focalLength);      //  increment the counter
-      if (cunter < 101) {            //  if the counter < 10, call the loop function
+      if (cunter < 201) {            //  if the counter < 10, call the loop function
          speeder();    
                      
                             console.log(cunter);    //  ..  again which will trigger another 
       }   
                           //  ..  setTimeout()
-   }, 10)
+   }, 3)
 }
 
 var iddqd ;

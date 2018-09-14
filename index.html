@@ -1,178 +1,194 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Aparimeya Taneja</title>
-<meta name="author" content="Aparimeya Taneja">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-<link href="main.css" type="text/css" rel="stylesheet"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aparimeya Taneja</title>
+    <meta name="author" content="Aparimeya Taneja">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="main.css" type="text/css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+            crossorigin="anonymous"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Oswald:300|Montserrat:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Oswald:300|Montserrat:100,200,300"
+          rel="stylesheet">
 
-<script src="circletype.min.js"></script>
+    <script src="circletype.min.js"></script>
 
-</script>
-<script>
+    </script>
+    <script >
 
-$(document).ready(function(){
+    $(document).ready(function () {
 
-	var $semtex = $(document).width();
-	$(window).resize(function()
+        var $semtex = $(document).width();
+        $(window).resize(function () {
+                $semtex = $(window).width();
+            }
+        );
 
-			{$semtex = $(window).width(); }
-
-		);
-
-var $change;
+        var $change;
 
 
-    $(document).mousemove(function(event){
-    	if (event.pageX > $semtex/2)
-    	{
-    		$change = event.pageX - ($semtex/2);
-    	
-    	$("#demo2").css("transform" ,"rotate(" + $change/15 +"deg)" );
-        $(".linkz").css("transform" ,"rotate(" + $change/15 +"deg)" );
-    	}
-    	else if (event.pageX < $semtex/2)
-    	{
-    		$change = ($semtex/2) - event.pageX;
-    		
-    	$("#demo2").css("transform" ,"rotate(-" + $change/15 +"deg)" );
-        $(".linkz").css("transform" ,"rotate(-" + $change/15 +"deg)" );
-    	}
-         
+        $(document).mousemove(function (event) {
+            if (event.pageX > $semtex / 2) {
+                $change = event.pageX - ($semtex / 2);
+
+                $("#demo2").css("transform", "rotate(" + $change / 15 + "deg)");
+                $(".linkz").css("transform", "rotate(" + $change / 15 + "deg)");
+            }
+            else if (event.pageX < $semtex / 2) {
+                $change = ($semtex / 2) - event.pageX;
+
+                $("#demo2").css("transform", "rotate(-" + $change / 15 + "deg)");
+                $(".linkz").css("transform", "rotate(-" + $change / 15 + "deg)");
+            }
+
+        });
     });
-});
-</script>
+    </script>
 
 </head>
 <body>
 <!-- <canvas id="myCanvas" class="">
 Your browser does not support the canvas element.
 </canvas> -->
- <canvas id="canvas">
- </canvas>
+<canvas id="canvas">
+</canvas>
 
 <div class="back"></div>
 <div class="contain">
-<div id="demo" class="message"></div>
-<br>
-<pre id="demoo" class="message" style="margin-top: -10px;color: black;background: white;width: unset;margin: auto;margin-left: 1px;"></pre>
+    <div id="demo" class="message"></div>
+    <br>
+    <pre id="demoo" class="message"
+         style="margin-top: -10px;color: black;background: white;width: unset;margin: auto;margin-left: 1px;"></pre>
 
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
     <script src="circletype.min.js"></script>
-<script>
+    <script>
 
 
-
-</script>
-<br>
-
-
+    </script>
+    <br>
 
 
 </div>
 
 <div class="menu">
-<div class="internal">
-<p id="demo2">ABOUT ME | PROJECTS | CONTACT</p>
+    <div class="internal">
+        <p id="demo2">ABOUT ME | PROJECTS | CONTACT</p>
+    </div>
+    <div class="linkz">
+        <div class="box" style="margin-left: -150px;height: 120px;width:90px" id="box1"></div>
+        <div class="box xxx"
+             style="margin-left: -60px;background-color: blue;bottom: 70px;height: 80px;width: 120px !important;z-index: 2"
+             id="boxx "></div>
+        <div class="box" style="margin-left: 60px;background-color: green;height: 120px;width:90px" id="box2"></div>
+    </div>
 </div>
-<div class="linkz">
-<div class="box" style="margin-left: -150px;height: 120px;width:90px" id="box1"  ></div>
-<div class="box xxx"  style="margin-left: -60px;background-color: blue;bottom: 70px;height: 80px;width: 120px !important;z-index: 2" 
- id="boxx " ></div>
-<div class="box" style="margin-left: 60px;background-color: green;height: 120px;width:90px" id="box2"  ></div>
-</div>
-</div>
-<script >new CircleType(document.getElementById('demo2')).radius(140);</script>
+<script>new CircleType(document.getElementById('demo2')).radius(140);</script>
 <script src="scroll.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="main.js"></script>
-    <pre class="helno" id = "demooo"></pre>
+<pre class="helno" id="demooo"></pre>
 <div class="about_page" id="aboutpage">
-<div class = "about_content">
-   	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis velit in sapien finibus, nec luctus est tempus. Mauris vulputate ullamcorper rhoncus. Cras eget ipsum consequat, euismod libero in, condimentum augue. Aenean blandit ligula et orci feugiat egestas. Vivamus porttitor ornare posuere. Duis dictum, sem mollis pharetra suscipit, lacus odio lobortis nunc, ac facilisis mauris urna consequat elit. Curabitur ac rutrum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ultrices turpis nec metus congue, eu volutpat enim gravida. Duis at scelerisque turpis. Mauris nec eros vitae augue hendrerit gravida. Maecenas lacus libero, commodo sit amet semper vel, congue et ipsum. Integer sodales lectus at ante efficitur, vel interdum eros scelerisque. Fusce et pretium metus. Sed egestas turpis ac nisi elementum, sed vehicula ligula euismod.
+    <div class="about_content">
 
-Phasellus pharetra erat a iaculis suscipit. Sed non ex sodales, dapibus augue quis, sodales massa. Aliquam erat volutpat. Curabitur et tellus commodo, commodo tortor eu, eleifend lacus. Proin lobortis gravida ex. Suspendisse bibendum sapien quis felis ornare lacinia. Nulla mattis mi in mauris pellentesque eleifend. Proin sit amet orci at ipsum scelerisque mattis nec at quam. Quisque in dolor eget justo rutrum imperdiet. Cras vestibulum non metus eu luctus. Sed pharetra felis vel condimentum posuere. Fusce erat lacus, mattis placerat mollis in, ullamcorper sit amet diam. Nunc venenatis velit a sapien porttitor pretium. In dapibus nisl nec tincidunt posuere. Phasellus eget tempor mi. Integer placerat, urna ac tempus pharetra, ligula ligula convallis lacus, ut convallis elit nisl at justo.
+        <h1 style="
+    letter-spacing: 1px;">Hi! Im Aparimeya Taneja, a UI/UX and web designer, and fullstack developer.</h1>
+        <p class="aboot"> Currently, I am a CS major at Duke University. This is my personal website [Space themed!]
+            where you can see my resume as well as almost all other big and small projects i've worked on.
+            I am also a freelance graphic designer and sometimes make digital art [@Humblef00ls] for fun!
+        </p>
+          <p class="abuut"> I was born in New Delhi, India, and have been coding for about 3 years now, but my love for
+              computers and tech comes from an entire childhood worth of video games and anime. For me design is a lot
+          more </p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis velit in sapien finibus, nec luctus est tempus. Mauris vulputate ullamcorper rhoncus. Cras eget ipsum consequat, euismod libero in, condimentum augue. Aenean blandit ligula et orci feugiat egestas. Vivamus porttitor ornare posuere. Duis dictum, sem mollis pharetra suscipit, lacus odio lobortis nunc, ac facilisis mauris urna consequat elit. Curabitur ac rutrum purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ultrices turpis nec metus congue, eu volutpat enim gravida. Duis at scelerisque turpis. Mauris nec eros vitae augue hendrerit gravida. Maecenas lacus libero, commodo sit amet semper vel, congue et ipsum. Integer sodales lectus at ante efficitur, vel interdum eros scelerisque. Fusce et pretium metus. Sed egestas turpis ac nisi elementum, sed vehicula ligula euismod.
-
-Phasellus pharetra erat a iaculis suscipit. Sed non ex sodales, dapibus augue quis, sodales massa. Aliquam erat volutpat. Curabitur et tellus commodo, commodo tortor eu, eleifend lacus. Proin lobortis gravida ex. Suspendisse bibendum sapien quis felis ornare lacinia. Nulla mattis mi in mauris pellentesque eleifend. Proin sit amet orci at ipsum scelerisque mattis nec at quam. Quisque in dolor eget justo rutrum imperdiet. Cras vestibulum non metus eu luctus. Sed pharetra felis vel condimentum posuere. Fusce erat lacus, mattis placerat mollis in, ullamcorper sit amet diam. Nunc venenatis velit a sapien porttitor pretium. In dapibus nisl nec tincidunt posuere. Phasellus eget tempor mi. Integer placerat, urna ac tempus pharetra, ligula ligula convallis lacus, ut convallis elit nisl at justo.
-</div>
+    </div>
 </div>
 <div class="works_page" id="workspage">
-<div class = "works_content">
- 
-   <a href="error.html"><i class="material-icons" id="skyvault">cloud_upload</i></a> <div class="nevix" id="skyvault_linkzr">
-        <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
-    </div><br>
-<i class="material-icons" id="humblefools">
-image
-</i> <div class="nevix" id="humblefools_linkzr">
-        <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
-    </div><br>
-<i class="material-icons" id="magazine">
-import_contacts
-</i> <div class="nevix" id="magazine_linkzr">
-        <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
-    </div><br>
-<i class="material-icons" id="cfest">
-public
-</i> <div class="nevix" id="cfest_linkzr">
-        <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
-    </div><br>
-<i class="material-icons" id="gradfilm">
-movie
-</i> <div class="nevix" id="gradfilm_linkzr">
-        <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
-    </div><br>
-<i class="material-icons" id="mun">
-account_balance
-</i> <div class="nevix" id="mun_linkzr">
-        <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
-    </div><br>
-<i class="material-icons" id="zenith">
-code
-</i> <div class="nevix" id="zenith_linkzr">
-        <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
-    </div>
+    <div class="works_content">
 
-</div>
+        <a href="error.html"><i class="material-icons" id="skyvault">cloud_upload</i></a>
+        <div class="nevix" id="skyvault_linkzr">
+            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        </div>
+        <br>
+        <i class="material-icons" id="humblefools">
+            image
+        </i>
+        <div class="nevix" id="humblefools_linkzr">
+            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        </div>
+        <br>
+        <i class="material-icons" id="magazine">
+            import_contacts
+        </i>
+        <div class="nevix" id="magazine_linkzr">
+            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        </div>
+        <br>
+        <i class="material-icons" id="cfest">
+            public
+        </i>
+        <div class="nevix" id="cfest_linkzr">
+            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        </div>
+        <br>
+        <i class="material-icons" id="gradfilm">
+            movie
+        </i>
+        <div class="nevix" id="gradfilm_linkzr">
+            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        </div>
+        <br>
+        <i class="material-icons" id="mun">
+            account_balance
+        </i>
+        <div class="nevix" id="mun_linkzr">
+            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        </div>
+        <br>
+        <i class="material-icons" id="zenith">
+            code
+        </i>
+        <div class="nevix" id="zenith_linkzr">
+            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        </div>
+
+    </div>
 </div>
 <div class="contact_page" id="contactpage">
-<div class = "contact_content">
+    <div class="contact_content">
 
-<textarea name="content" rows="5" cols="20"  class="jake" placeholder="Enter your message" onfocus="this.placeholder = ''"
-onblur="this.placeholder = 'Enter your message'"></textarea>
-<div class="wekeed">
-<input type="text" name="email" class="babybay" placeholder="Your Email " onfocus="this.placeholder = ''"
-onblur="this.placeholder = 'Your Email'">
-<input type="text" name="subject" class="babybay" style="top: 29%" placeholder="Subject" onfocus="this.placeholder = ''"
-onblur="this.placeholder = 'Subject'">
-<input type="submit" name="send" class="babybay" style="top: 58%" value="SUBMIT">
-</div>
+<textarea name="content" rows="5" cols="20" class="jake" placeholder="Enter your message"
+          onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Enter your message'"></textarea>
+        <div class="wekeed">
+            <input type="text" name="email" class="babybay" placeholder="Your Email " onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Your Email'">
+            <input type="text" name="subject" class="babybay" style="top: 29%" placeholder="Subject"
+                   onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Subject'">
+            <input type="submit" name="send" class="babybay" style="top: 58%" value="SUBMIT">
+        </div>
 
 
-
-
-<div class="fleta">
-<a href=""> <i class="fab fa-facebook"></i> </a>
-<a href=""> <i class="fab fa-instagram"></i></a>
-<a href=""> <i class="fab fa-linkedin"></i></a>
-</div>
-</div>
+        <div class="fleta">
+            <a href=""> <i class="fab fa-facebook"></i> </a>
+            <a href=""> <i class="fab fa-instagram"></i></a>
+            <a href=""> <i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
 </div>
 <div class="about_back" id="aboutback"></div>
 <div class="works_back" id="worksback"></div>
