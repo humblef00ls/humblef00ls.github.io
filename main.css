@@ -21,7 +21,7 @@ body, html {
 }
 @font-face {
     font-family: "Infinity";
-    src: url('Infinity.ttf'),
+    src: url('Infinity.ttf');
 }
 
 @font-face {
@@ -518,7 +518,7 @@ textarea {
 }
 
 input {
-    margin: none;
+    margin: unset;
     padding: 0px;
 }
 
@@ -572,7 +572,7 @@ input {
     float: left;
 }
 
-}
+
 
 .sabeyobe {
     display: flex;
