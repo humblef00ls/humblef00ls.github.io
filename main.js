@@ -1,7 +1,34 @@
 document.getElementById("box1").style.transform = "rotate(30deg)";
-document.getElementById("box2").style.transform = "rotate(-30deg)";  
+document.getElementById("box2").style.transform = "rotate(-30deg)";
 document.getElementById("demo2").style.transformOrigin=  "50% 100% ";
 
+$(document).ready(function () {
+
+    var $semtex = $(document).width();
+    $(window).resize(function () {
+            $semtex = $(window).width();
+        }
+    );
+
+    var $change;
+
+
+    $(document).mousemove(function (event) {
+        if (event.pageX > $semtex / 2) {
+            $change = event.pageX - ($semtex / 2);
+
+            $("#demo2").css("transform", "rotate(" + $change / 15 + "deg)");
+            $(".linkz").css("transform", "rotate(" + $change / 15 + "deg)");
+        }
+        else if (event.pageX < $semtex / 2) {
+            $change = ($semtex / 2) - event.pageX;
+
+            $("#demo2").css("transform", "rotate(-" + $change / 15 + "deg)");
+            $(".linkz").css("transform", "rotate(-" + $change / 15 + "deg)");
+        }
+
+    });
+});
 $(document).ready(function(){
 
 
@@ -28,15 +55,15 @@ $.fn.circleType = function(options) {
         return;
     }
     return this.each(function () {
-    
-        if (options) { 
+
+        if (options) {
             $.extend(settings, options);
         }
-        var elem = this, 
+        var elem = this,
             delta = (180 / Math.PI),
             fs = parseInt($(elem).css('font-size'), 10),
             ch = parseInt($(elem).css('line-height'), 10) || fs,
-            letters, 
+            letters,
             center;
 
         // trim spaces at the beginning and at the end
@@ -44,14 +71,14 @@ $.fn.circleType = function(options) {
 
         // grab the HTML string
         var temp = elem.innerHTML;
-        
+
         // replace any space that is not part of a tag with a non-breakable space (&nbsp;)
         elem.innerHTML = elem.innerHTML.replace(/<[^<>]+>|\s/g, function(s) { return s[0] == '<' ? s : '&nbsp;'; })
 
         // wrap each character in a span
         $(elem).lettering();
 
-        
+
         var inTag = false, // are we between tags? (<i>here</i>)
             isTag = false, // are we inside a tag? (<here></here>)
             tagNum = -1,   // how many opening tags have we met so far?
@@ -109,28 +136,28 @@ $.fn.circleType = function(options) {
 
         letters = elem.getElementsByTagName('span');
         center = Math.floor(letters.length / 2)
-                
+
         var layout = function () {
-            var tw = 0, 
+            var tw = 0,
                 i,
                 offset = 0,
-                minRadius, 
-                origin, 
+                minRadius,
+                origin,
                 innerRadius,
                 l, style, r, transform;
-                                                
+
             for (i = 0; i < letters.length; i++) {
                 tw += letters[i].offsetWidth;
             }
             minRadius = (tw / Math.PI) / 2 + ch;
-            
+
             if (settings.fluid && !settings.fitText) {
                 settings.radius = Math.max(elem.offsetWidth / 2, minRadius);
-            }    
+            }
             else if (!settings.radius) {
                 settings.radius = minRadius;
-            }   
-            
+            }
+
             if (settings.dir === -1) {
                 origin = 'center ' + (-settings.radius + ch) / fs + 'em';
             } else {
@@ -138,19 +165,19 @@ $.fn.circleType = function(options) {
             }
 
             innerRadius = settings.radius - ch;
-                
+
             for (i = 0; i < letters.length; i++) {
                 l = letters[i];
                 offset += l.offsetWidth / 2 / innerRadius * delta;
-                l.rot = offset;                      
+                l.rot = offset;
                 offset += l.offsetWidth / 2 / innerRadius * delta;
-            }   
+            }
             for (i = 0; i < letters.length; i++) {
                 l = letters[i]
                 style = l.style
-                r = (-offset * settings.dir / 2) + l.rot * settings.dir            
+                r = (-offset * settings.dir / 2) + l.rot * settings.dir
                 transform = 'rotate(' + r + 'deg)';
-                    
+
                 style.position = 'absolute';
                 style.left = '50%';
                 style.marginLeft = -(l.offsetWidth / 2) / fs + 'em';
@@ -170,7 +197,7 @@ $.fn.circleType = function(options) {
                     style.bottom = 0;
                 }
             }
-            
+
             if (settings.fitText) {
                 if (typeof($.fn.fitText) !== 'function') {
                     console.log('FitText.js is required when using the fitText option');
@@ -180,15 +207,15 @@ $.fn.circleType = function(options) {
                         updateHeight();
                     });
                 }
-            }    
+            }
             updateHeight();
-            
+
             if (typeof settings.callback === 'function') {
                 // Execute our callback with the element we transformed as `this`
                 settings.callback.apply(elem);
             }
         };
-        
+
         var getBounds = function (elem) {
             var docElem = document.documentElement,
                 box = elem.getBoundingClientRect();
@@ -197,8 +224,8 @@ $.fn.circleType = function(options) {
                 left: box.left + window.pageXOffset - docElem.clientLeft,
                 height: box.height
             };
-        };       
-        
+        };
+
         var updateHeight = function () {
             var mid = getBounds(letters[center]),
                 first = getBounds(letters[0]),
@@ -208,14 +235,14 @@ $.fn.circleType = function(options) {
             } else {
                 h = mid.top - first.top + first.height;
             }
-            elem.style.height = h + 'px';  
+            elem.style.height = h + 'px';
         }
 
         if (settings.fluid && !settings.fitText) {
             $(window).resize(function () {
                 layout();
             });
-        }    
+        }
 
         if (document.readyState !== "complete") {
             elem.style.visibility = 'hidden';
@@ -247,7 +274,7 @@ $.fn.circleType = function(options) {
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 800, function(){
-   
+
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
       });
@@ -333,7 +360,7 @@ function executeFrame(){
 function initializeStars(){
   centerX = canvas.width / 2;
   centerY = canvas.height / 2;
-  
+
   stars = [];
   for(i = 0; i < numStars; i++){
     star = {
@@ -349,7 +376,7 @@ function moveStars(){
   for(i = 0; i < numStars; i++){
     star = stars[i];
     star.z--;
-    
+
     if(star.z <= 0){
       star.z = canvas.width;
     }
@@ -358,26 +385,26 @@ function moveStars(){
 
 function drawStars(){
   var pixelX, pixelY, pixelRadius;
-  
+
   // Resize to the screen
   if(canvas.width != window.innerWidth || canvas.width != window.innerWidth){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     initializeStars();
   }
-  
+
   c.fillStyle = "black";
   c.fillRect(0,0, canvas.width, canvas.height);
   c.fillStyle = "white";
   for(i = 0; i < numStars; i++){
     star = stars[i];
-    
+
     pixelX = (star.x - centerX) * (focalLength / star.z);
     pixelX += centerX;
     pixelY = (star.y - centerY) * (focalLength / star.z);
     pixelY += centerY;
     pixelRadius = radius * (focalLength / star.z);
-    
+
     c.beginPath();
     c.arc(pixelX, pixelY, pixelRadius, 0, 2 * Math.PI);
     c.fill();
@@ -399,29 +426,29 @@ executeFrame();
 // shim layer with setTimeout fallback
 // from http://paulirish.com/2011/requestanimationframe-for-smart-animating/
 window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame       || 
-          window.webkitRequestAnimationFrame || 
-          window.mozRequestAnimationFrame    || 
-          window.oRequestAnimationFrame      || 
-          window.msRequestAnimationFrame     || 
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          window.oRequestAnimationFrame      ||
+          window.msRequestAnimationFrame     ||
           function( callback ){
             window.setTimeout(callback, 1000 / 60);
           };
 })();
-  var cunter = 1;  
-function speeder () {   
-       
+  var cunter = 1;
+function speeder () {
+
         console.log(focalLength);         //  create a loop function
    setTimeout(function () {    //  call a 3s setTimeout when the loop is called
             //  your code here
-      cunter++;           
-        focalLength-=1;   
+      cunter++;
+        focalLength-=1;
         console.log(focalLength);      //  increment the counter
       if (cunter < 201) {            //  if the counter < 10, call the loop function
-         speeder();    
-                     
-                            console.log(cunter);    //  ..  again which will trigger another 
-      }   
+         speeder();
+
+                            console.log(cunter);    //  ..  again which will trigger another
+      }
                           //  ..  setTimeout()
    }, 3)
 }
@@ -442,81 +469,12 @@ $("#shadowburn").delay(1000).slideDown(0);
 
 
 pine = ($(window).width()*.71) - 80;
-$(".nevix-inner").css('width',pine); 
+$(".nevix-inner").css('width',pine);
   $(".nevix").animate({
       width: "toggle"
     });
-  $("#skyvault").mouseover(function(){
-    $("#skyvault_linkzr").animate({
-      width: "toggle"
-    });
-  });
-  $("#magazine").mouseleave(function(){
-    $("#magazine_linkzr").animate({
-      width: "toggle"
-    });
-  });
-   $("#humblefools").mouseover(function(){
-    $("#humblefools_linkzr").animate({
-      width: "toggle"
-    });
-  });
-  $("#mun").mouseleave(function(){
-    $("#mun_linkzr").animate({
-      width: "toggle"
-    });
-  });
-   $("#cfest").mouseover(function(){
-    $("#cfest_linkzr").animate({
-      width: "toggle"
-    });
-  });
-  $("#gradfilm").mouseleave(function(){
-    $("#gradfilm_linkzr").animate({
-      width: "toggle"
-    });
-  });
-   $("#zenith").mouseover(function(){
-    $("#zenith_linkzr").animate({
-      width: "toggle"
-    });
-  });
-    $("#skyvault").mouseleave(function(){
-    $("#skyvault_linkzr").animate({
-      width: "toggle"
-    });
-  });
-  $("#magazine").mouseover(function(){
-    $("#magazine_linkzr").animate({
-      width: "toggle"
-    });
-  });
-   $("#humblefools").mouseleave(function(){
-    $("#humblefools_linkzr").animate({
-      width: "toggle"
-    });
-  });
-  $("#mun").mouseover(function(){
-    $("#mun_linkzr").animate({
-      width: "toggle"
-    });
-  });
-   $("#cfest").mouseleave(function(){
-    $("#cfest_linkzr").animate({
-      width: "toggle"
-    });
-  });
-  $("#gradfilm").mouseover(function(){
-    $("#gradfilm_linkzr").animate({
-      width: "toggle"
-    });
-  });
-   $("#zenith").mouseleave(function(){
-    $("#zenith_linkzr").animate({
-      width: "toggle"
-    });
-  });
-  
+
+
 
 
 function surefour()
@@ -563,7 +521,7 @@ $(".xxx").on('click', function() {
         n();
     }).slideDown();
     iiii=0;
- 
+
   }
     $("#aboutpage").fadeOut(500);
     $("#aboutback").fadeOut(500);
@@ -577,25 +535,25 @@ $(".xxx").on('click', function() {
     $("#workspage").css('display','block');
      TweenMax.to(".contain",1.5,{opacity : 0, y: -300,ease: Expo.easeOut});
    TweenMax.to(".contain",1,{opacity : 0, y: -1000, delay : 2});
-        console.log(focalLength); 
+        console.log(focalLength);
               TweenMax.to("#canvas",3,{opacity : 1, delay : .5});
 radius = 2;
 TweenMax.to("#canvas",2,{opacity : 0, delay : 2});
 
-speeder();  
- 
-           console.log(focalLength); 
-            setTimeout(function () {    
-             
-        focalLength=100;   
-        console.log(focalLength);      
-              
+speeder();
+
+           console.log(focalLength);
+            setTimeout(function () {
+
+        focalLength=100;
+        console.log(focalLength);
+
    }, 5000)
 
 TweenMax.from("#workspage",2,{opacity : 0, delay : 1,ease: Power3.easeIn});
 TweenMax.from("#worksback",4,{opacity : 0, delay : 1,ease: Power3.easeIn});
 console.log("r");
-txxxt = ' MY WORKS ';
+txxxt = ' ARCHIVES ';
 setTimeout(typeWriterrr, 3500) ;
 TweenMax.to("#demooo",4,{opacity : 1, delay : 1,ease: Power3.easeIn});
 wohyall = $("#demooo").offset();
@@ -618,7 +576,7 @@ else
 }
 $(".works_content").css('height',iddqd);
 TweenMax.from(".works_content",4,{opacity : 0, height: 0, delay : 3,ease: Power3.easeOut});
-     
+
 
 setTimeout(surefour, 3500) ;
      }
@@ -660,19 +618,19 @@ $("#box1").on('click', function() {
   $("#aboutback").css('display','block');
      TweenMax.to(".contain",1.5,{opacity : 0, y: -300,ease: Expo.easeOut});
    TweenMax.to(".contain",1,{opacity : 0, y: -1000, delay : 2});
-        console.log(focalLength); 
+        console.log(focalLength);
               TweenMax.to("#canvas",3,{opacity : 1, delay : .5});
 radius = 2;
 TweenMax.to("#canvas",2,{opacity : 0, delay : 2});
 
-speeder();  
- 
-           console.log(focalLength); 
-            setTimeout(function () {    
-             
-        focalLength=100;   
-        console.log(focalLength);      
-              
+speeder();
+
+           console.log(focalLength);
+            setTimeout(function () {
+
+        focalLength=100;
+        console.log(focalLength);
+
    }, 5000)
 
 TweenMax.from("#aboutpage",2,{opacity : 0, delay : 1,ease: Power3.easeIn});
@@ -702,7 +660,7 @@ else
 
 $(".about_content").css('height',iddqd);
 TweenMax.from(".about_content",4,{opacity : 0, height: 0 , delay : 3,ease: Power3.easeOut});
-    
+
 setTimeout(surefour, 3500) ;
 
      }
@@ -716,9 +674,9 @@ $("#box2").on('click', function() {
   $(".xxx").hide(0);
   $("#box1").hide(0);
 
-  
+
   $("#box2").hide(0);
-  
+
   $(".xxx").delay(4000).show(0);
   $("#box1").delay(4000).show(0);
   $("#box2").delay(4000).show(0);
@@ -755,19 +713,19 @@ $("#box2").on('click', function() {
 
      TweenMax.to(".contain",1.5,{opacity : 0, y: -300,ease: Expo.easeOut});
    TweenMax.to(".contain",1,{opacity : 0, y: -1000, delay : 2});
-        console.log(focalLength); 
+        console.log(focalLength);
               TweenMax.to("#canvas",3,{opacity : 1, delay : .5});
 radius = 2;
 TweenMax.to("#canvas",2,{opacity : 0, delay : 2});
 
-speeder();  
- 
-           console.log(focalLength); 
-            setTimeout(function () {    
-             
-        focalLength=100;   
-        console.log(focalLength);      
-              
+speeder();
+
+           console.log(focalLength);
+            setTimeout(function () {
+
+        focalLength=100;
+        console.log(focalLength);
+
    }, 5000)
 
 TweenMax.from("#contactpage",2,{opacity : 0, delay : 1,ease: Power3.easeIn});
@@ -797,12 +755,40 @@ else
 
 $(".contact_content").css('height',iddqd);
 TweenMax.from(".contact_content",4,{opacity : 0, height: 0 , delay : 3,ease: Power3.easeOut});
-    
+
 setTimeout(surefour, 3500) ;
 
      }
 
 });
+function reveal(attr) {
+    attr = attr+"linkzr";
+    $('#'+attr).show(500);
+
+}
+
+var habit = document.getElementsByClassName("sosa");
+var attribute;
+var intel;
+var amd = document.getElementsByClassName("closure");
+
+for( intel = 0;intel<habit.length;intel++)
+    {
+        habit[intel].addEventListener('click',function () {
+            attribute = this.id;
+            reveal(attribute);
+            $('#blackout').show(10);
+            $('#blackout').fadeTo(100,1);
+            $("body").append($effect);
+            $(".a").css({"left" : agilities.x -25 , "top" : agilities.y -25 });
+            $(".a").addClass("anime");
+        });
+        amd[intel].addEventListener('click',function () {
+           $('.infothing').hide(500);
+            $('#blackout').fadeTo(100,0);
+            $('#blackout').delay(600).hide(10);
+        });
+    }
 });
 
 

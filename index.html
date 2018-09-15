@@ -21,37 +21,6 @@
 
     <script src="circletype.min.js"></script>
 
-    </script>
-    <script >
-
-    $(document).ready(function () {
-
-        var $semtex = $(document).width();
-        $(window).resize(function () {
-                $semtex = $(window).width();
-            }
-        );
-
-        var $change;
-
-
-        $(document).mousemove(function (event) {
-            if (event.pageX > $semtex / 2) {
-                $change = event.pageX - ($semtex / 2);
-
-                $("#demo2").css("transform", "rotate(" + $change / 15 + "deg)");
-                $(".linkz").css("transform", "rotate(" + $change / 15 + "deg)");
-            }
-            else if (event.pageX < $semtex / 2) {
-                $change = ($semtex / 2) - event.pageX;
-
-                $("#demo2").css("transform", "rotate(-" + $change / 15 + "deg)");
-                $(".linkz").css("transform", "rotate(-" + $change / 15 + "deg)");
-            }
-
-        });
-    });
-    </script>
 
 </head>
 <body>
@@ -103,90 +72,161 @@ Your browser does not support the canvas element.
 <div class="about_page" id="aboutpage">
     <div class="about_content">
 
-        <h1 style="
-    letter-spacing: 1px;">Hi! Im Aparimeya Taneja, a UI/UX and web designer, and fullstack developer.</h1>
+        <h1 style="" class="abh">Hi! Im Aparimeya Taneja, a UI/UX and web designer, and fullstack developer.</h1>
         <p class="aboot"> Currently, I am a CS major at Duke University. This is my personal website [Space themed!]
             where you can see my resume as well as almost all other big and small projects i've worked on.
             I am also a freelance graphic designer and sometimes make digital art [@Humblef00ls] for fun!
         </p>
-          <p class="abuut"> I was born in New Delhi, India, and have been coding for about 3 years now, but my love for
-              computers and tech comes from an entire childhood worth of video games and anime. For me design is a lot
-          more </p>
+        <p class="abuut"> I was born in New Delhi, India, and have been coding for about 4 years now, but my love for
+            computers and tech comes from an entire childhood worth of video games and anime. For me, design and user
+            experience are just as important as the inner mechanics of anything. Working on projects small and large,
+            i've
+            learnt many skills that compliment designing, be it as simple yet esssential like color schemes, to more
+            technical ones like rapid prototyping, how to optimally use IDEs and git, and many more.</p>
 
     </div>
 </div>
 <div class="works_page" id="workspage">
     <div class="works_content">
 
-        <a href="error.html"><i class="material-icons" id="skyvault">cloud_upload</i></a>
-        <div class="nevix" id="skyvault_linkzr">
-            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        <div class="sosa" id="skyvault"><i class="material-icons">cloud_upload</i><br>
+            Sky_Vault
         </div>
-        <br>
-        <i class="material-icons" id="humblefools">
-            image
-        </i>
-        <div class="nevix" id="humblefools_linkzr">
-            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+
+        <div class="sosa" id="humblefools"><i class="material-icons">image</i><br>
+            Humblef00ls
         </div>
-        <br>
-        <i class="material-icons" id="magazine">
-            import_contacts
-        </i>
-        <div class="nevix" id="magazine_linkzr">
-            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        <div class="sosa" id="magazine"><i class="material-icons" >import_contacts</i><br>
+            The Columban
         </div>
-        <br>
-        <i class="material-icons" id="cfest">
-            public
-        </i>
-        <div class="nevix" id="cfest_linkzr">
-            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        <div class="sosa" id="cfest"><i class="material-icons">public</i><br>
+            Columban Fest
         </div>
-        <br>
-        <i class="material-icons" id="gradfilm">
-            movie
-        </i>
-        <div class="nevix" id="gradfilm_linkzr">
-            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        <div class="sosa" id="gradfilm"><i class="material-icons">movie</i><br>
+            Graduation Film
         </div>
-        <br>
-        <i class="material-icons" id="mun">
-            account_balance
-        </i>
-        <div class="nevix" id="mun_linkzr">
-            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+        <div class="sosa" id="mun"><i class="material-icons">account_balance</i><br>
+            Columban MUN
         </div>
-        <br>
-        <i class="material-icons" id="zenith">
-            code
-        </i>
-        <div class="nevix" id="zenith_linkzr">
-            <div class="nevix-inner">Lorem ipsum dolor sit amet...</div>
+
+        <div class="sosa" id="zenith"><i class="material-icons">code</i><br>
+            Zenith Vipers
+        </div>
+        <div class="sosa" id="edvarsity"><i class="material-icons" >school</i><br>
+            Edvarsity
         </div>
 
     </div>
 </div>
+<div id="blackout"></div>
+<div id="skyvaultlinkzr" class="infothing">
+<h1 class="closure">x</h1>
+ <h1 style="margin: 0px;">Sky_Vault</h1>
+<hr>
+    <p>
+       Sky_Vault is the first back end web app I ever made. It is a simple and free text archiving platform, where you
+        can upload/type/paste any text up to 2000 characters, and assign it a password/key, which is what then further
+        encrypts your stored text.<br><br> I really was just bored one day and thought this would be cool way to archive and share
+        texts.<br><br>
+        The whole backend was made in PHP7, and Sky_Vault2.0 will be coming soon [In Node.JS this time!].
+    </p>
+</div>
+<div id="humblefoolslinkzr" class="infothing">
+    <h1 class="closure">x</h1>
+    <h1 style="margin: 0px;">Humblef00ls</h1>
+    <hr>
+    <p>
+        Humblef00ls is basically my digital/designer alias, but mainly the name of my page on instagram
+        <a href="https://www.instagram.com/humblef00ls/"style="font-weight: 300">[@humblefools]</a>.<br><br>
+        I started it as just a place where I would upload the designs I used to make whenever I was bored back in 2017.
+        Now, it has over 1200 followers, and has been a great platform/brand/digital identity for me to showcase
+        my skills and has even gotten me several freelance commissions.
+    </p>
+</div>
+<div id="magazinelinkzr" class="infothing">
+    <h1 class="closure">x</h1>
+    <h1 style="margin: 0px;">The Columban</h1>
+    <hr>
+    <p>
+        I was the editor in chief as well as the design head of my school's annual magazine, 'The Columban'. My job
+        included managing 18 other students as well as designing most and reviewing all pages of the magazine. <br><br>It
+        was my first huge project, which also had the largest learning curve, from photoshop skills and efficiency to
+        leadership and team management.
+    </p>
+</div>
+<div id="cfestlinkzr" class="infothing">
+    <h1 class="closure">x</h1>
+    <h1 style="margin: 0px;">Columban Fest</h1>
+    <hr>
+    <p>
+        Was the designer and the sole web developer for my school's annual cultural fest event, the Columban Fest for two years.
+         This was the first time I fully designed a dynamic and mobile friendly website, and even had a php form in it's second edition.
+        <br><br>
+        Although I no longer pay for the website's hosting, you can check out their current page <a href="https://www.facebook.com/cfest18"style="font-weight: 300">here</a>.
+
+    </p>
+</div>
+<div id="gradfilmlinkzr" class="infothing">
+    <h1 class="closure">x</h1>
+    <h1 style="margin: 0px;">Graduation Film</h1>
+    <hr>
+    <p>
+      Was the director and main video editor for my school's graduation film for the batch of 2017. Although I don't really
+        like AV Editing, it was really fun to make and took about 50+ hours in total.<br><br>
+        Watch it <a href="https://www.youtube.com/watch?v=PvpsXK2xSbU"style="font-weight: 300">here</a>.
+    </p>
+</div>
+<div id="munlinkzr" class="infothing">
+    <h1 class="closure">x</h1>
+    <h1 style="margin: 0px;">Columban MUN</h1>
+    <hr>
+    <p>
+        Was the USG IT Head for my school's MUN conference. This was really just majorly only graphic design with some
+        other tech-related assistance to the secretariat of The Columban Model United Nations Conference 2017. I had to
+        design basically everything [Logo, placards, stationary, etc.] from scratch since this was the first MUN hosted by our school in this decade.<br><br>
+        Check out their current page <a href="https://www.facebook.com/ColumbanModelUnitedNations"style="font-weight: 300">here</a>.
+    </p>
+</div>
+<div id="zenithlinkzr" class="infothing">
+    <h1 class="closure">x</h1>
+    <h1 style="margin: 0px;">Zenith Vipers</h1>
+    <hr>
+    <p>
+        Was part of a team project, with the role of a graphic designer and web front end developer. To be honest, I learned
+        a lot more about professional level team work and management, as well as market research and rapid prototyping with XD
+        over more tech related skills.
+    </p>
+</div>
+<div id="edvarsitylinkzr" class="infothing">
+    <h1 class="closure">x</h1>
+    <h1 style="margin: 0px;">Edvarsity</h1>
+    <hr>
+    <p>
+        Was the sole developer, designer and also tech-advisor for a business startup. This was my first professional project
+        that I carried out alone over the summer.<br><br>
+        It was a great learning curve as I figured out and deployed several essential strategies that web based businesses use such
+        as SEO, data analytics, etc. I also gained a lot of technological experience working with a PHP backend for their Database,
+         registration, and other features.<br><br>
+        Check it out <a href="https://www.edvarsity.co.in/"style="font-weight: 300">here</a>.
+
+
+    </p>
+</div>
 <div class="contact_page" id="contactpage">
     <div class="contact_content">
 
-<textarea name="content" rows="5" cols="20" class="jake" placeholder="Enter your message"
-          onfocus="this.placeholder = ''"
-          onblur="this.placeholder = 'Enter your message'"></textarea>
-        <div class="wekeed">
-            <input type="text" name="email" class="babybay" placeholder="Your Email " onfocus="this.placeholder = ''"
-                   onblur="this.placeholder = 'Your Email'">
-            <input type="text" name="subject" class="babybay" style="top: 29%" placeholder="Subject"
-                   onfocus="this.placeholder = ''"
-                   onblur="this.placeholder = 'Subject'">
-            <input type="submit" name="send" class="babybay" style="top: 58%" value="SUBMIT">
-        </div>
+
 
 
         <div class="fleta">
-            <a href=""> <i class="fab fa-facebook"></i> </a>
-            <a href=""> <i class="fab fa-instagram"></i></a>
-            <a href=""> <i class="fab fa-linkedin"></i></a>
+            <span> <a href="https://www.facebook.com/krimsonhf"> <i class="fab fa-facebook"></i> </a></span>
+            <span> <a href="https://www.instagram.com/aparimeyahf/"> <i class="fab fa-instagram"></i></a></span>
+            <span><a onclick="alert('Snap username : aparimeyat')" style="cursor: pointer"> <i class="fab fa-snapchat-ghost"></i></a></span>
+            <span><a href="https://github.com/humblef00ls/humblef00ls.github.io"> <i class="fab fa-github"></i></a></span>
+            <span> <a href="mailto:aparimeyataneja@gmail.com"> <i class="fas fa-envelope"></i></a></span>
+            <span> <a href="https://www.linkedin.com/in/aparimeya-taneja-1a7300162/"> <i class="fab fa-linkedin"></i></a></span>
+            <div onclick="window.open('cv1.pdf');">R E S U M E</div>
+
         </div>
     </div>
 </div>
