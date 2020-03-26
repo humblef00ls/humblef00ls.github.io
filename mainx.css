@@ -145,7 +145,10 @@ body, html {
     margin: auto;
 
 }
+.IPC{
+   width: 100%;
 
+}
 .internal {
 
 }
@@ -277,7 +280,8 @@ body, html {
 }
 
 .about_content {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x:hidden;
     border-radius: 10px 10px 10px 10px;
     background-color: rgba(2, 2, 2, 0.2);
     margin: auto;
@@ -293,9 +297,11 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 
 }
+.about_content::-webkit-scrollbar { width: 0 !important }
 
 .works_content {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x:hidden;
     border-radius: 10px 10px 10px 10px;
     background-color: rgba(2, 2, 2, 0.2);
     margin: auto;
@@ -313,9 +319,10 @@ body, html {
     text-align: center;
 
 }
-
+.works_content::-webkit-scrollbar { width: 0 !important }
 .contact_content {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x:hidden;
     border-radius: 10px 10px 10px 10px;
     background-color: rgba(2, 2, 2, 0);
     margin: auto;
@@ -333,7 +340,7 @@ body, html {
     text-align: center;
 
 }
-
+.contact_content::-webkit-scrollbar { width: 0 !important }
 @media screen and (max-width: 1100px) {
     .helno {
 
@@ -360,14 +367,17 @@ i.material-icons:hover {
 .sosa {
     transition-duration: .5s;
     margin: 1.5%;
-    opacity: .5;
-    font-size: 16px;
+    opacity: .65;
+    font-size: 19px;
+    letter-spacing: 2px;
+    -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(70%);
     width: 60px;
     display: inline-block;
     margin: 20px;
     font-weight: 300;
     margin-top: 30px;
-width:15%;
+width:20%;
     text-align: center;
 }
 
@@ -376,10 +386,12 @@ width:15%;
 }
 
 .sosa:hover {
-    transform: scale(1.4);
+    transform: scale(1.25);
     transition-duration: .5s;
     cursor: pointer;
     opacity: 1;
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
 }
 
 .material-icons {
@@ -557,13 +569,14 @@ input {
         font-size: 30px;
     }
     .sosa {
-        width:35%;
+        width:50%;
         font-size: 12px;
     }
     .fleta span {
     font-size: 32px;
         margin-top: 5px !important;
     }
+
 }
 
 .jake {
@@ -716,7 +729,7 @@ body {
 .infothing{
     display: none;
     position: absolute;
-    overflow: scroll;
+    overflow-y: scroll;
     border-radius: 10px 10px 10px 10px;
     background-color: rgba(2, 2, 2, 0.4);
     width: 50vw;
@@ -730,6 +743,8 @@ body {
     font-size: 25px;
     padding: 20px;
 }
+.infothing::-webkit-scrollbar { width: 0 !important }
+
 .closure{
     position: absolute;
     top: 20px;
@@ -780,6 +795,7 @@ body {
     background: rgba(0,0,0,1);
 
 }
+
 @media screen and (max-width: 500px) {
     .fleta div {
         width: 200px;

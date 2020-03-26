@@ -783,12 +783,19 @@ for( intel = 0;intel<habit.length;intel++)
             $(".a").css({"left" : agilities.x -25 , "top" : agilities.y -25 });
             $(".a").addClass("anime");
         });
-        amd[intel].addEventListener('click',function () {
-           $('.infothing').hide(500);
-            $('#blackout').fadeTo(100,0);
-            $('#blackout').delay(600).hide(10);
-        });
+      //  amd[intel].addEventListener('click',function () {
+      //     $('.infothing').hide(500);
+     //       $('#blackout').fadeTo(100,0);
+       //     $('#blackout').delay(600).hide(10);
+      //  });
     }
+    $(".closure").click(function () {
+        $('.infothing').hide(500);
+             $('#blackout').fadeTo(100,0);
+             $('#blackout').delay(600).hide(10);
+    });
+
+
 });
 
 
